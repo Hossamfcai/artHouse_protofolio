@@ -1,0 +1,72 @@
+<h1>{{ "Contact Us" | uppercase }}</h1>
+<div class="container">
+  <form class="form" [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <h4>{{ "Write us" | uppercase }}</h4>
+    <p>Send us a note and we’ll get back to you as quickly as possible.</p>
+    <div class="d-flex gap-3">
+      <div class="w-100 mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Name"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          formControlName="name"
+        />
+        <div
+          class="msg"
+          *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched || myForm.get('name')?.errors?.['required']"
+        ></div>
+      </div>
+      <div class="w-100 mb-3">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          formControlName="email"
+        />
+        <div
+          class="msg"
+          *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched || myForm.get('email')?.errors?.['required'] || myForm.get('email')?.errors?.['email']"
+        ></div>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Phone"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        formControlName="phone"
+      />
+    </div>
+    <div class="w-100">
+      <textarea
+        class="form-control"
+        aria-label="With textarea"
+        placeholder="What’s on your mind?"
+        formControlName="note"
+      ></textarea>
+      <div
+        class="msg"
+        *ngIf="myForm.get('note')?.invalid && myForm.get('note')?.touched || myForm.get('note')?.errors?.['required'] "
+      ></div>
+    </div>
+    <button
+      *ngIf="!submited"
+      type="submit"
+      class="btn p-2 mt-4 login"
+      [disabled]="
+        myForm.get('password')?.invalid || myForm.get('email')?.invalid
+      "
+    >
+      Login
+    </button>
+    <button *ngIf="submited" type="submit" class="btn p-2 mt-4 login-loading">
+      <div class="loader"></div>
+    </button>
+  </form>
+</div>

@@ -1,0 +1,130 @@
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Three equal columns */
+  column-gap: 1rem;
+  padding: 2rem 2rem;
+  background-color: #231f20; /* Add some gap between grid items */
+}
+
+.about {
+  color: white;
+  font-size: small;
+  margin-top: -30px;
+}
+.social-media2 {
+  text-align: start;
+  margin: 25px 0px;
+}
+.social-media2 > a {
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  width: 100px;
+  padding: 10px 10px;
+  text-align: center;
+  background-color: #f1262c;
+  margin: 0px 4px;
+}
+.social-media2 > a:hover {
+  background-color: black;
+  transition: background-color 0.5s ease;
+}
+.social-media2 > a svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+.contact > span {
+  color: white;
+}
+.contact > span i {
+  margin: 0px 5px;
+}
+.two-items {
+  display: flex;
+}
+.customer-popular {
+  display: flex;
+  gap: 2rem;
+}
+.customer-support > h5 {
+  color: #f90;
+  margin-bottom: 15px;
+}
+.customer-support > p {
+  color: #f90;
+  margin-bottom: 15px;
+}
+.customer-support-list {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.customer-support-list > li {
+  padding: 5px 0px;
+}
+.customer-support-list > li a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+.customer-support-list > li a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  border-bottom: 1px solid #f1262c;
+  transition: all 0.5s;
+}
+.customer-support-list > li a:hover {
+  color: #f1262c;
+}
+.customer-support-list > li a:hover::before {
+  width: 100%;
+}
+
+.customer-support {
+  padding-top: 50px;
+}
+.contact {
+  padding-left: 0px;
+  padding-top: 0px;
+}
+.contact > p {
+  color: #f90;
+}
+.contact > h5 span {
+  color: #f1262c;
+}
+.contact > h5 span i {
+  color: #f1262c;
+  margin-right: 15px;
+}
+.rights {
+  background-color: #231f20;
+  text-align: center;
+  padding: 15px 50px;
+  border-top: 1px solid #52525b;
+}
+.rights > p {
+  color: white;
+}
+
+@media (min-width: 820px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 4rem;
+    padding: 2rem 4rem;
+    background-color: #231f20; /* Add some gap between grid items */
+  }
+  .customer-popular {
+    display: flex;
+    gap: 8rem;
+  }
+  .contact {
+    padding-left: 50px;
+    padding-top: 50px;
+  }
+}

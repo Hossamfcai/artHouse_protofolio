@@ -1,0 +1,88 @@
+:host {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  margin: 20px 0px;
+}
+h4 {
+  padding: 10px 0px;
+  border-bottom: 1px solid #e5e7eb;
+}
+p {
+  color: #9ca3af;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50rem;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  margin-bottom: 10px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 5rem 4rem;
+  width: 100%;
+}
+
+button {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.1px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+  transition: border-bottom 0.2s ease-in-out;
+}
+.msg {
+  font-size: smaller;
+  color: red;
+}
+.login {
+  border: 2px solid black;
+  border-radius: 20px;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+.login:hover {
+  border: 0px;
+  background-color: #f1262c;
+  transition: background-color 0.5s ease-in-out;
+  color: whitesmoke;
+}
+
+.login-loading {
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: #f1262c;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+.loader {
+  pointer-events: none;
+  width: 25px;
+  height: 25px;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: an1 1s ease infinite;
+}
+@keyframes an1 {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
