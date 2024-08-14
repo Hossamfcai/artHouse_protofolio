@@ -12,6 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DepartmentsComponent } from './departments/departments.component';
+import { DepartmentComponent } from './departments/department/department.component';
+import { ProductComponent } from './departments/department/product/product.component';
+import { ImageSliderComponent } from './home/image-slider/image-slider.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     ContactComponent,
+    DepartmentsComponent,
+    DepartmentComponent,
+    ProductComponent,
+    ImageSliderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [provideClientHydration()],
