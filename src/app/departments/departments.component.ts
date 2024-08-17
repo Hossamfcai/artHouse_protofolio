@@ -26,7 +26,7 @@ export class DepartmentsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-  @HostBinding('@routeAnimationTrigger') routeAnimation = true;
+
   // departments: department[] = [
   //   {
   //     department: 'Bedroom',

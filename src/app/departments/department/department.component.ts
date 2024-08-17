@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostBinding,
   Input,
   OnDestroy,
   OnInit,
@@ -11,12 +12,14 @@ import { department } from '../departments.component';
 import { HttpClient } from '@angular/common/http';
 import { DataServicesService } from '../../services/data-services.service';
 import { Subscription } from 'rxjs';
+import { routeAnimationState } from '../../../../shared/routeAnimation';
 
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
   styleUrl: './department.component.css',
   providers: [DataServicesService],
+  animations: [routeAnimationState],
 })
 export class DepartmentComponent implements OnInit, OnDestroy {
   constructor(private _dataservice: DataServicesService) {}
@@ -36,6 +39,7 @@ export class DepartmentComponent implements OnInit, OnDestroy {
     this.checkOverflow();
     this.subscription.add(getSubscription);
   }
+  @HostBinding('@routeAnimationTrigger') routeAnimation = true;
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

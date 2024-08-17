@@ -1,50 +1,35 @@
 <div class="about-container">
   <h1>{{ "about us" | uppercase }}</h1>
   <div class="img">
-    <img src="images/banner_home.jpg" alt="" />
+    <img [src]="Base_Url + aboutData.headerImg" alt="" />
   </div>
   <div class="about-us">
-    <div class="img-employees"><img src="images/10-9.jpg" alt="" /></div>
+    <div class="img-employees">
+      <img [src]="Base_Url + aboutData.firstImage" alt="" />
+    </div>
     <div class="history">
       <div class="history-content">
         <h6>History</h6>
         <p>
-          Art House was founded in 2010, a small workshop having unique product
-          design. We adopted a philosophy to be the leading manufacturer in
-          Egypt with a large showroom network which covers all over Egypt.
-          Therefore and within thirteen years of planning with a strategy and
-          hard dedicated work we became one of the largest B2B, B2C Furniture
-          Company in Egypt.
+          {{ aboutData.history }}
         </p>
       </div>
       <div class="history-content">
         <h6>Growth</h6>
         <p>
-          As a result of our dedicated work and our clients' trust, ART House
-          was able to increase its investment heavily and expand its capacity,
-          which allowed us to design a unique diversified portfolio, and made
-          ART House the first choices and destination for most celebrities,
-          artists and athlete.
+          {{ aboutData.growth }}
         </p>
       </div>
       <div class="history-content">
         <h6>Mission & Vision statement</h6>
         <p>
-          Providing unique premium furniture and innovative design concepts,
-          through a professional team with integrity and transparency, to
-          increasing the visibility of Egyptian furniture in the global market.
-          Art house to be the preferred quality furniture destination solution
-          in Egypt.
+          {{ aboutData.MissionAndVisionstatement }}
         </p>
       </div>
       <div class="history-content">
         <h6>Strategy</h6>
         <p>
-          - To become the leading company for the Furniture industry in Egypt. -
-          To be more visible and present in the Egyptian and foreign market. -
-          Continuously developing our factories with the latest equipment and
-          technology in the market. - To be first choices and destination for
-          most of celebrities,artists and athletes
+          {{ aboutData.strategy }}
         </p>
       </div>
     </div>
@@ -52,40 +37,25 @@
       <div class="history-content2">
         <h6>Why Art House ?</h6>
         <p>
-          Our commitment towards our clients to provide the best quality
-          standards and to gain their satisfaction with a highly trained and
-          professional team, using the latest technology tools methods and
-          machines. Cooperate with well verified partners globally to ensure
-          sourcing the highest quality material. Competitive and price offers.
-          Always on-time delivery. Certificate: ISO 14001:2015 / 10002:2018 Best
-          Furniture Designer Award.
+          {{ aboutData.WhyArtHouse }}
         </p>
       </div>
       <div class="history-content2">
         <h6>Our Scope</h6>
         <p>
-          Luxury furniture , Kitchens, dressing and outdoor Art House is the
-          main destination for a group of hotels, residential compounds and
-          hotel apartments. Our factory produces the highest standard quality
-          products, with a commitment of luxurious nishes. That is all done
-          through a specialized team selecting the highest types of fabric
-          materials of furnishings with wonderful choices that suit your home,
-          and meet the expectations of clients
+          {{ aboutData.OurScope }}
         </p>
       </div>
       <div class="history-content2">
         <h6>Our commitment</h6>
         <p>
-          We have hired a dedicated specialized customer service team, which has
-          helped the company to upgrade from being a furniture provider to a
-          one-stop-shop for complete furnishing solutions. Joinery equipped with
-          the latest machines to manufacture furniture. Projects Division
-          consists of interior designers, account managers, sales, customer
-          service team and after sales team.
+          {{ aboutData.OurCommitment }}
         </p>
       </div>
     </div>
-    <div class="img-2"><img src="images/IMG_7033.jpeg" alt="" /></div>
+    <div class="img-2">
+      <img [src]="Base_Url + aboutData.secondImage" alt="" />
+    </div>
   </div>
   <div class="branches">
     <div class="branches-head">
