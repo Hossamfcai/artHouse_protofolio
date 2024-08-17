@@ -1,16 +1,18 @@
 <div class="department">
   <h3>
-    <span>{{ department.department }}</span>
+    <span>{{ department }}</span>
   </h3>
   <div class="cover">
     <button class="icon" (click)="scroll(-250)" #leftButton>
       <i class="bi bi-arrow-left-square-fill"></i>
     </button>
     <div class="products-container" #productsContainer>
-      <app-product
-        *ngFor="let product of department.product"
-        [product]="product"
-      ></app-product>
+      <ng-container *ngFor="let product of products">
+        <app-product
+          *ngIf="product.department.department === department"
+          [product]="product"
+        ></app-product>
+      </ng-container>
     </div>
     <button class="icon" (click)="scroll(250)" #rightButton>
       <i class="bi bi-arrow-right-square-fill"></i>

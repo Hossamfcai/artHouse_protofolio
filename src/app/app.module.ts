@@ -16,6 +16,7 @@ import { DepartmentsComponent } from './departments/departments.component';
 import { DepartmentComponent } from './departments/department/department.component';
 import { ProductComponent } from './departments/department/product/product.component';
 import { ImageSliderComponent } from './home/image-slider/image-slider.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ImageSliderComponent } from './home/image-slider/image-slider.component
     ImageSliderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
-  providers: [provideClientHydration()],
+  providers: [provideClientHydration(), provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

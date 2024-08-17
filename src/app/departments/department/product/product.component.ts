@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { product } from '../../departments.component';
+import { product } from '../department.component';
 
 @Component({
   selector: 'app-product',
@@ -8,8 +8,20 @@ import { product } from '../../departments.component';
 })
 export class ProductComponent {
   @Input() product: product = {
-    img: '',
+    _id: '',
+    filename: '',
     title: '',
     price: '',
+    department: {
+      _id: '',
+      department: '',
+      createdAt: '',
+      updatedAt: '',
+      __v: 0,
+    },
+    createdAt: '',
+    updatedAt: '',
+    __v: 0,
   };
+  Base_Url: string = 'http://localhost:3000/';
 }
