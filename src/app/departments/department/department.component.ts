@@ -3,12 +3,14 @@ import {
   Component,
   ElementRef,
   Input,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
 import { department } from '../departments.component';
 import { HttpClient } from '@angular/common/http';
 import { DataServicesService } from '../../services/data-services.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-department',
@@ -16,7 +18,7 @@ import { DataServicesService } from '../../services/data-services.service';
   styleUrl: './department.component.css',
   providers: [DataServicesService],
 })
-export class DepartmentComponent implements AfterViewInit, OnInit {
+export class DepartmentComponent implements OnInit, OnDestroy {
   constructor(private _dataservice: DataServicesService) {}
 
   @ViewChild('productsContainer') productsContainer!: ElementRef;
@@ -24,14 +26,18 @@ export class DepartmentComponent implements AfterViewInit, OnInit {
   @ViewChild('rightButton') rightButton!: ElementRef;
   @Input() department!: string;
   products: product[] = [];
+  private subscription: Subscription = new Subscription();
   ngOnInit(): void {
-    this._dataservice.getProducts().subscribe((data) => {
-      this.products = data;
-      // console.log(this.products);
-    });
-  }
-  ngAfterViewInit() {
+    const getSubscription = this._dataservice
+      .getProducts()
+      .subscribe((data) => {
+        this.products = data;
+      });
     this.checkOverflow();
+    this.subscription.add(getSubscription);
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   checkOverflow() {

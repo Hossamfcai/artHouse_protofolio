@@ -1,6 +1,7 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { routeAnimationState } from '../../../shared/routeAnimation';
 import { DataServicesService } from '../services/data-services.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-departments',
@@ -9,14 +10,21 @@ import { DataServicesService } from '../services/data-services.service';
   providers: [DataServicesService],
   animations: [routeAnimationState],
 })
-export class DepartmentsComponent implements OnInit {
+export class DepartmentsComponent implements OnInit, OnDestroy {
   constructor(private dataService: DataServicesService) {}
+  subscription: Subscription = new Subscription();
   departments: department[] = [];
   ngOnInit(): void {
-    this.dataService.getDepartments().subscribe((data) => {
-      this.departments = data;
-      // console.log(this.departments);
-    });
+    const getSubscription = this.dataService
+      .getDepartments()
+      .subscribe((data) => {
+        this.departments = data;
+        // console.log(this.departments);
+      });
+    this.subscription.add(getSubscription);
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
   @HostBinding('@routeAnimationTrigger') routeAnimation = true;
   // departments: department[] = [
