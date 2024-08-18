@@ -10,6 +10,8 @@ export class DataServicesService {
   DepartmentsURL: string = 'http://localhost:3000/departments';
   ProductsURL: string = 'http://localhost:3000/products';
   aboutDataURL: string = 'http://localhost:3000/about';
+  branchesDataURL: string = 'http://localhost:3000/branch';
+  homeImages: string = 'http://localhost:3000/homeImages';
 
   getDepartments(): Observable<any> {
     return this.http.get<any>(this.DepartmentsURL);
@@ -20,5 +22,11 @@ export class DataServicesService {
   }
   getAboutData(): Observable<any> {
     return this.http.get<any>(this.aboutDataURL);
+  }
+  getBranches(): Observable<any> {
+    return this.http.get<any>(this.branchesDataURL);
+  }
+  getHomeImages(): Observable<any> {
+    return this.http.get<any>(this.homeImages);
   }
 }
