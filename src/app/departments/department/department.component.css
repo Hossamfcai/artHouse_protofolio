@@ -1,0 +1,81 @@
+:host {
+  width: 100%;
+}
+.department {
+  width: 100%;
+  padding: 0px 5px;
+}
+
+.department > h3 span {
+  font-family: "Raleway", sans-serif;
+  margin: 10px 0px;
+  padding-bottom: 4px;
+  border-bottom: 5px solid #f1262c;
+}
+.products-container {
+  width: 100%;
+  margin: 70px 0px;
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+  position: relative;
+  scroll-behavior: smooth;
+}
+.products-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.cover {
+  position: relative;
+  display: flex;
+}
+.cover::before {
+  position: relative;
+  content: "";
+  left: 0;
+  top: 0;
+  z-index: 100;
+  height: 100%;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.icon {
+  font-size: 40px;
+  outline: none;
+  border: none;
+  padding: 0px 10px;
+
+  cursor: pointer;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.icon i {
+  color: #f1262c;
+}
+.cover:hover .icon {
+  opacity: 1;
+  animation: example 0.7s;
+}
+
+@keyframes example {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+@media (min-width: 478px) {
+  .department {
+    padding: 0px 35px;
+  }
+  .icon {
+    padding: 0px 20px;
+  }
+}

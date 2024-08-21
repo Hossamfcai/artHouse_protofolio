@@ -70,59 +70,7 @@ h1 {
   filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
     drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 }
-.branches {
-  display: flex;
-  flex-direction: column;
-}
-.branches-head {
-  /* padding: 0px 6.5rem; */
-}
-.branches-head > p {
-  margin-bottom: 5px;
-  font-family: "Raleway", sans-serif;
-  font-size: larger;
-  color: #6b7280;
-}
-.branches-imgs {
-  margin: 30px 0px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-}
-.branches-imgs > .img-container {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
-    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-}
-.img-container > img {
-  border-radius: 15px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s;
-}
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 35px;
-  font-family: "Raleway", sans-serif;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.img-container:hover .text-overlay {
-  opacity: 1;
-  transform: translate(0.9);
-}
-.img-container:hover img {
-  transform: scale(1.1);
-}
+
 /* .img-container > img:hover {
   transform: scale(0.9);
   transition: transform 0.5s ease;
@@ -209,11 +157,5 @@ h1 {
   .about-us {
     margin-top: 40px;
     text-align: center;
-  }
-}
-
-@media (min-width: 760px) {
-  .branches-imgs {
-    flex-direction: row;
   }
 }

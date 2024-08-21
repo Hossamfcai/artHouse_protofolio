@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { routeAnimationState } from '../../../shared/routeAnimation';
 
 @Component({
@@ -9,4 +9,5 @@ import { routeAnimationState } from '../../../shared/routeAnimation';
 })
 export class HomeComponent {
   @HostBinding('@routeAnimationTrigger') routeAnimation = true;
+  selectedIndex = 0;
 }

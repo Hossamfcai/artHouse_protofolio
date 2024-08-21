@@ -1,0 +1,8 @@
+.departments {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 50px 0px;
+  width: 100%;
+  /* gap: 10px; */
+}

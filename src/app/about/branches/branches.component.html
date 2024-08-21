@@ -1,0 +1,12 @@
+<div class="branches">
+  <div class="branches-head">
+    <p>Welcome To Our Branches</p>
+    <h2>Check Our Branches</h2>
+  </div>
+  <div class="branches-imgs">
+    <div class="img-container" *ngFor="let branch of branches">
+      <img [src]="Base_Url + branch.branchImg" alt="" />
+      <div class="text-overlay">{{ branch.branchName | uppercase }}</div>
+    </div>
+  </div>
+</div>

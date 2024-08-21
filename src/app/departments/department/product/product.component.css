@@ -1,0 +1,33 @@
+.product {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  gap: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+.product:hover {
+  transform: scale(0.93);
+}
+.product > h5 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.1px;
+}
+.product > p {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+}
+.product > .img-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.img-container > img {
+  width: 100%;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+}
