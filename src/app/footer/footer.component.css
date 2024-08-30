@@ -66,6 +66,7 @@
   color: white;
   text-decoration: none;
   position: relative;
+  cursor: pointer;
 }
 .customer-support-list > li a::before {
   content: "";

@@ -5,12 +5,14 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DepartmentsComponent } from './departments/departments.component';
+import { BranchesComponent } from './about/branches/branches.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'departments', component: DepartmentsComponent },
+  { path: 'branches', component: BranchesComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

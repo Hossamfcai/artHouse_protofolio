@@ -15,6 +15,7 @@ export class ProductComponent {
     filename: '',
     title: '',
     price: '',
+    departmentName: '',
     department: {
       _id: '',
       department: '',

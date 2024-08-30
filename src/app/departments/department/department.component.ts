@@ -70,13 +70,15 @@ export interface product {
   filename: string;
   title: string;
   price: string;
-  department: {
-    _id: string;
-    department: string;
-    createdAt: string;
-    updatedAt: string;
-    __v: number;
-  };
+  departmentName: string;
+  department: Department;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
+export interface Department {
+  _id: string;
+  department: string;
   createdAt: string;
   updatedAt: string;
   __v: number;

@@ -9,8 +9,8 @@
     <div class="products-container" #productsContainer>
       <ng-container *ngFor="let product of products">
         <app-product
-          *ngIf="product.department.department === department"
           [product]="product"
+          *ngIf="product.departmentName == department"
         ></app-product>
       </ng-container>
     </div>

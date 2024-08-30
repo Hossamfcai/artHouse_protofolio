@@ -42,18 +42,18 @@
           <div class="customer-support">
             <p>Customer Support</p>
             <ul class="customer-support-list">
-              <li><a href="">Home</a></li>
-              <li><a href="">About Us</a></li>
-              <li><a href="">Contact Us</a></li>
+              <li><a routerLink="/home">Home</a></li>
+              <li><a routerLink="/departments">Departments</a></li>
+              <li><a routerLink="/about">About Us</a></li>
+              <li><a routerLink="/contact">Contact Us</a></li>
             </ul>
           </div>
           <div class="customer-support">
             <p>Customer Support</p>
             <ul class="customer-support-list">
-              <li><a href="">Bedroom</a></li>
-              <li><a href="">Dinning Room</a></li>
-              <li><a href="">Salon</a></li>
-              <li><a href="">Sofa</a></li>
+              <li *ngFor="let department of departments">
+                <a>{{ department.department }}</a>
+              </li>
             </ul>
           </div>
         </div>
